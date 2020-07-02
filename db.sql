@@ -1,3 +1,4 @@
+/* please give the DB the name: store; */
 CREATE TABLE article (
                 id_article VARCHAR(100) NOT NULL,
                 marque VARCHAR(30) NOT NULL,
