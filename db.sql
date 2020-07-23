@@ -1,10 +1,10 @@
 /* please give the DB the name: store; */
-CREATE TABLE article (
-                id_article VARCHAR(100) NOT NULL,
-                marque VARCHAR(30) NOT NULL,
-                prix_unitaire DECIMAL(7,2) NOT NULL,
-                categorie VARCHAR(50) NOT NULL,
-                PRIMARY KEY (id_article)
+CREATE TABLE product (
+                id VARCHAR(100) NOT NULL,
+                brand VARCHAR(30) NOT NULL,
+                price DECIMAL(7,2) NOT NULL,
+                category VARCHAR(50) NOT NULL,
+                PRIMARY KEY (id)
 );
 
 
@@ -39,7 +39,7 @@ CREATE TABLE commande (
 
 
 CREATE TABLE ligne (
-                article_id VARCHAR(100) NOT NULL,
+                product_id VARCHAR(100) NOT NULL,
                 commande_id INT NOT NULL,
                 quantite SMALLINT DEFAULT 1 NOT NULL,
                 prix DECIMAL(10,2) NOT NULL,
@@ -48,9 +48,8 @@ CREATE TABLE ligne (
 
 
 ALTER TABLE ligne ADD CONSTRAINT article_ligne_fk
-FOREIGN KEY (article_id)
-REFERENCES article (id_article)
-ON DELETE NO ACTION
+FOREIGN KEY (product_id)
+REFERENCES product (id)
 ON UPDATE NO ACTION;
 
 ALTER TABLE commande ADD CONSTRAINT client_commande_fk
