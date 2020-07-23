@@ -81,7 +81,7 @@ class Client
             if( $birth_date>=$today )   return self::NOT_YET_BORN;
             $diff= $today->diff($birth_date);
             if( $diff->format('%y')<self::$min_length['age'] )  return self::TOO_YOUNG;
-            $this->birth_date=$birth_date;
+            $this->birth_date=$birth_date->format('Y-m-d');
         }
         return self::NOT_VALID;
     }
@@ -111,6 +111,14 @@ class Client
         }
         return self::NOT_VALID;
     }
+
+    public function get_first_name() { return $this->first_name; }
+    public function get_last_name() { return $this->last_name; }
+    public function get_email() { return $this->email; }
+    public function get_password() { return $this->password; }
+    public function get_birth_date() { return $this->birth_date; }
+    public function get_address() { return $this->address; }
+    public function get_city() { return $this->city; }
 
     /* translate error code to a message */
     private static function decrypt($error_code, $field) {
