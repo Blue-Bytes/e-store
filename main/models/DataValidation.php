@@ -9,7 +9,7 @@ class DataValidation
     public static function client_email(String $email) {
         return filter_var($email, FILTER_VALIDATE_EMAIL);
     }
-    // date format yyyy-mm-dd
+    // date format mm-dd-yyyy
     public static function client_birthdate(String $birthdate) {
         $zones=preg_split('/-/', $birthdate);
         return checkdate((int)$zones[1], (int)$zones[2], (int)$zones[0]);

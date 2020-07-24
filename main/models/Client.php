@@ -3,7 +3,7 @@ include_once 'DataValidation.php';
 
 class Client
 {
-    private $first_name, $last_name, $email, $password, $birth_date, $address, $city;
+    private $id, $first_name, $last_name, $email, $password, $birth_date, $address, $city;
 
     // set of constants to describe the state of the parameter passed to a setX function
     const VALID=8;
@@ -30,6 +30,9 @@ class Client
         }
     }
 
+    public function set_id($id) {
+        $this->id=$id;  return self::VALID;
+    }
     public function set_first_name(String $first_name) {
         if( $first_name=="" )   return self::EMPTY;
         if( strlen($first_name)>self::$max_length['first_name'] )
@@ -82,6 +85,7 @@ class Client
             $diff= $today->diff($birth_date);
             if( $diff->format('%y')<self::$min_length['age'] )  return self::TOO_YOUNG;
             $this->birth_date=$birth_date->format('Y-m-d');
+            return self::VALID;
         }
         return self::NOT_VALID;
     }
@@ -112,6 +116,7 @@ class Client
         return self::NOT_VALID;
     }
 
+    public function get_id() { return $this->id; }
     public function get_first_name() { return $this->first_name; }
     public function get_last_name() { return $this->last_name; }
     public function get_email() { return $this->email; }

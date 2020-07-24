@@ -4,29 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./styles/loginStyles.css" rel="stylesheet">
     <?php include("import_files.php"); ?>
-    <title>Connecter</title>
+    <link href="./styles/loginStyles.css" rel="stylesheet">
+    <title>s'inscrir</title>
+
 </head>
 <body>
     <?php include("header.php"); ?>
     <div class="wrapper fadeInDown">
         <div id="formContent">
-            <div class="fadeIn first">
-                <h1>Se Connecter</h1>
-            </div>
+        <div class="fadeIn first">
+            <h1>Créer un Compte</h1>
+        </div>
             <?php
-                include_once 'display_login_form.php';
+                include_once 'display_sign_up_form.php';
                 if( isset($_SESSION['errors']) ) {
-                    display_login_form($_SESSION['errors']);
+                    display_sign_up_form($_SESSION['errors']);
                     unset($_SESSION['errors']);
                 }
-                else {
-                    display_login_form();
-                }
+                else
+                    display_sign_up_form();
             ?>
             <div id="formFooter">
-                <a class="underlineHover" href="#">pas de compte? <br>Créer un Compte</a>
+                <a class="underlineHover" href="#">Vous avez un compte ? <br>Se connecter</a>
             </div>
         </div>
     </div>
