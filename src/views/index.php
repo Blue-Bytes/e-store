@@ -87,6 +87,7 @@
                 </div>
         </section>
     </main>
+    <?php include("sidebar.php"); ?>
     <?php include("footer.php"); ?>
 </body>
 
