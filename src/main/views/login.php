@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,11 +15,16 @@
             <div class="fadeIn first">
                 <h1>Se Connecter</h1>
             </div>
-            <form>
-                <input type="email" id="email" class="fadeIn second" name="email" placeholder="E-mail">
-                <input type="password" id="password" class="fadeIn third" name="password" placeholder="Mot de Passe">
-                <button type="submit" class="fadeIn fourth" id="button">Se Connecter</button>
-            </form>
+            <?php
+                include_once 'display_login_form.php';
+                if( isset($_SESSION['errors']) ) {
+                    display_login_form($_SESSION['errors']);
+                    unset($_SESSION['errors']);
+                }
+                else {
+                    display_login_form();
+                }
+            ?>
             <div id="formFooter">
                 <a class="underlineHover" href="#">pas de compte? <br>Créer un Compte</a>
             </div>

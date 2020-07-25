@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -79,8 +80,8 @@
                 </div>
         </section>
     </main>
-    <?php include("sidebar.php"); ?>
     <?php include("footer.php"); ?>
+    <?php include("sidebar.php"); ?>
 </body>
 
 </html>

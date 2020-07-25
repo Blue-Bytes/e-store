@@ -7,13 +7,13 @@ if( isset($_POST['sign_in']) ) {
     $errors=[];
     // validate e-mail and password
     if( !isset($_POST['mail']) || $_POST['mail']=="" ) {
-        $errors['mail']='insert your e-mail';
+        $errors['mail']='enter your e-mail';
     }
     else if( !filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL) ) {
         $errors['mail']='Invalid e-mail';
     }
     if( !isset($_POST['password']) || $_POST['password']=="" ) {
-        $errors['password']='insert your password';
+        $errors['password']='enter your password';
     }
     // check if he is an admin
     if( empty($errors) ) { // data valid

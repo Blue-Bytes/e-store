@@ -18,7 +18,7 @@ if( isset($_POST['addProduct']) ) {
             $errors['id']="a product with the same id already exist";
         else {
             include "store_product_img.php";
-            if( store_product_img() )  // if product images stored wihout errors
+            if( store_product_img($product) )  // if product images stored wihout errors
                 $product_manager->add($product);
         }
     }

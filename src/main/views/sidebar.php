@@ -62,4 +62,4 @@
         </div>
         <a class="button btn btn-outline-light" href="category.php?category=ecran pc">Ecran PC</a>
     </div>
-</div>
+</div> 

@@ -10,14 +10,14 @@ if( !isset($_SESSION['admin']) )
 	<title>Home</title>
 	<meta charset="utf-8" />
 	<link rel="stylesheet" type="text/css" href="styles/header.css" />
-	<link rel="stylesheet" type="text/css" href="../../views/styles/menu.css" />
+	<link rel="stylesheet" type="text/css" href="styles/menu.css" />
 	<link rel="stylesheet" type="text/css" href="styles/add_product_form.css" />
-	<script type="text/javascript" src="../../views/styles/menu.js"></script>
+	<script type="text/javascript" src="styles/menu.js"></script>
 </head>
 <body>
 	<?php
 	    include 'header.php';
-	    include '../../views/menu.php';
+	    include 'menu.php';
 
 	    // show add product form + errors if they exist
         include 'display_add_product_form.php';
