@@ -1,92 +1,39 @@
+<?php
+    error_reporting(E_ALL);
+    ini_set("display_errors", 1);
+    session_start();
+    if( isset($_GET['category']) ) {
+        $_SESSION['category']=htmlspecialchars($_GET['category']);
+    }
+    if( !isset($_SESSION['category']) )
+        $_SESSION['category']='smartphone';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php include 'import_files.php'; ?>
+    <link rel="stylesheet" type="text/css" href="styles/category.css">
     <title>Category</title>
+
 </head>
 <body>
-    <?php include 'header.php'; ?>
-    <main class="container" style="margin-bottom: 10px;">
-        <br>
-        <center>
-            <h1 class="bg-primary">
-                example
-                <?php
-                //name of the category that has been selected
-                ?>
-            </h1>
-        </center>
-        <br>
-        <section class="container">
-            <div class="row">
-                <div class="col d-flex justify-content-center">
-                    <div class="card" style="width:250px;">
-                        <img class="card-img-top" src="./images/690137.jpg" alt="Card image" style="width:100%">
-                        <div class="card-body">
-                            <h4 class="card-title">John Doe</h4>
-                            <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                            <a href="#" class="btn btn-primary">See Profile</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col d-flex justify-content-center">
-                    <div class="card" style="width:250px;">
-                        <img class="card-img-top" src="./images/690137.jpg" alt="Card image" style="width:100%">
-                        <div class="card-body">
-                            <h4 class="card-title">John Doe</h4>
-                            <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                            <a href="#" class="btn btn-primary">See Profile</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col d-flex justify-content-center">
-                    <div class="card" style="width:250px;">
-                        <img class="card-img-top" src="./images/690137.jpg" alt="Card image" style="width:100%">
-                        <div class="card-body">
-                            <h4 class="card-title">John Doe</h4>
-                            <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                            <a href="#" class="btn btn-primary">See Profile</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col d-flex justify-content-center">
-                    <div class="card" style="width:250px;">
-                        <img class="card-img-top" src="./images/690137.jpg" alt="Card image" style="width:100%">
-                        <div class="card-body">
-                            <h4 class="card-title">John Doe</h4>
-                            <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                            <a href="#" class="btn btn-primary">See Profile</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col d-flex justify-content-center">
-                    <div class="card" style="width:250px;">
-                        <img class="card-img-top" src="./images/690137.jpg" alt="Card image" style="width:100%">
-                        <div class="card-body">
-                            <h4 class="card-title">John Doe</h4>
-                            <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                            <a href="#" class="btn btn-primary">See Profile</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col d-flex justify-content-center">
-                    <div class="card" style="width:250px;">
-                        <img class="card-img-top" src="./images/690137.jpg" alt="Card image" style="width:100%">
-                        <div class="card-body">
-                            <h4 class="card-title">John Doe</h4>
-                            <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                            <a href="#" class="btn btn-primary">See Profile</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <?php
+        include 'header.php';
+        include 'menu.php';
+    ?>
+    <section id="container">
+        <section id="categories_and_brands">
+            <?php
+                include_once 'display_category_sisters.php';
+                display_category_sisters($_SESSION['category']);
+
+                include_once 'display_brands.php';
+            ?>
         </section>
-    </main>
+        <?php include_once 'display_products.php'; ?>
+    </section>
     <?php include 'sidebar.php'; ?>
     <?php include 'footer.php'; ?>
     

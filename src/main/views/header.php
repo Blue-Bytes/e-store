@@ -63,18 +63,20 @@
             top: 0;
             transform: rotate(-45deg);
         }
+
         @media only screen and (max-width: 600px) {
             #dropdown {
-                width: 100px;
+                width: 120px;
                 margin-top: 5px;
+                margin-left: 0px;
             }
 
             .sidebarBtn span {
-                top: 25px;
+                top: 40px;
             }
 
             .sidebar {
-                top: 55px;
+                top: 75px;
             }
         }
 
@@ -85,6 +87,10 @@
             background-color: orangered;
             padding: 3px;
             color: black;
+        }
+
+        .shopping-basket {
+            display: none;
         }
     </style>
     <script>
@@ -99,7 +105,10 @@
         <button class="sidebarBtn">
             <span></span>
         </button>
-        <a class="navbar-brand" href="index.php" style="margin-left: 10px;">Logo</a>
+        <a class="navbar-brand" href="index.php" style="margin-left: 10px;">
+            <img src="./images/icons8-market-square-96.png" width="60px" height="60px">
+            <span>E-electro</span>
+        </a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -119,12 +128,12 @@
                 <li class="nav-item" style="margin-top: 10px;">
                     <a class="nav-link" href="login.php">Connecter</a>
                 </li>
-                <li class="nav-item"  style="margin-top: 10px;">
-                    <a class="nav-link" href="signup">S'inscrir</a>
+                <li class="nav-item" style="margin-top: 10px;">
+                    <a class="nav-link" href="signup">S'inscrire</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item shopping-basket">
                     <a class="nav-link" href="signup">
-                        <span id="num-product">3</span>
+                        <span id="num-product"></span>
                         <span><i class="fa fa-shopping-basket text-success"></i></span>
                     </a>
                 </li>

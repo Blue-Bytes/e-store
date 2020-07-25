@@ -32,5 +32,3 @@ if( isset($_POST['login']) ) {
     $_SESSION['errors']=$errors;
     header('Location: ../views/login.php');
 }
-
-

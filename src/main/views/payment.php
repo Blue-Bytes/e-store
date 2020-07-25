@@ -20,15 +20,16 @@
                 <div class="col-lg-6 mx-auto">
                     <div class="card">
                         <div class="card-header">
-                            <div class="bg-white shadow-sm pt-4 pl-2 pr-2 pb-2">
-                                <ul role="tablist" class="nav bg-light nav-pills rounded nav-fill mb-3">
-                                    <li class="nav-item"> <span class="nav-link active "> <i class="fas fa-credit-card mr-2"></i> Carte de Crédit </span> </li>
-                                </ul>
-                            </div>
                             <!-- Credit card form content -->
                             <div class="tab-content">
                                 <div id="credit-card" class="tab-pane fade show active pt-3">
                                     <form method="post" action="../controllers/paymentController.php">
+                                    <div class="d-flex justify-content-center">
+                                        <h3 id="client" class="bg-primary" style="border-radius: 5px; padding: 5px;">moha ouhro</h3>
+                                    </div>
+                                    <div class="form-group"> <label for="address">
+                                                <h6>Adresse de livraison</h6>
+                                            </label> <input type="text" name="address" placeholder="Adresse de livraison" required class="form-control "> </div>
                                         <div class="form-group"> <label for="username">
                                                 <h6>Propriétaire de la carte</h6>
                                             </label> <input type="text" name="username" placeholder="Nom du Propriétaire de la carte" required class="form-control "> </div>
