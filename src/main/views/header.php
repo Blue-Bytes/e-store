@@ -15,7 +15,7 @@
             height: 3px;
             background-color: white;
             position: absolute;
-            top: 24px;
+            top: 40px;
         }
 
         .sidebarBtn span:before {
@@ -40,7 +40,7 @@
 
         .sidebar {
             position: fixed;
-            top: 55px;
+            top: 75px;
             left: -250px;
             width: 250px;
             height: 100%;
@@ -68,6 +68,23 @@
                 width: 100px;
                 margin-top: 5px;
             }
+
+            .sidebarBtn span {
+                top: 25px;
+            }
+
+            .sidebar {
+                top: 55px;
+            }
+        }
+
+        #num-product {
+            margin-top: 5px;
+            margin-left: 1px;
+            border-radius: 50%;
+            background-color: orangered;
+            padding: 3px;
+            color: black;
         }
     </style>
     <script>
@@ -99,11 +116,17 @@
             </div>
             </form>
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
+                <li class="nav-item" style="margin-top: 10px;">
                     <a class="nav-link" href="login.php">Connecter</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item"  style="margin-top: 10px;">
                     <a class="nav-link" href="signup">S'inscrir</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="signup">
+                        <span id="num-product">3</span>
+                        <span><i class="fa fa-shopping-basket text-success"></i></span>
+                    </a>
                 </li>
             </ul>
         </div>
