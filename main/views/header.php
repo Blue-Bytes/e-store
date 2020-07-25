@@ -5,12 +5,13 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navb">
+            <form method="get" action="category.php">
             <div class="input-group container-sm">
                 <div class="input-group-prepend">
                 <?php include("categories.php"); ?>
                 </div>
-                <input type="text" class="form-control" placeholder="Chercher" style="margin: 0px;">
-                <button class="btn btn-outline-success" type="button" style="border-radius: 0%;">
+                <input type="text" class="form-control" name="product_id" placeholder="Chercher" style="margin: 0px;" >
+                <button class="btn btn-outline-success" type="submit" name="" style="border-radius: 0%;">
                     <i class='fas fa-search'></i>
                 </button>
             </div>

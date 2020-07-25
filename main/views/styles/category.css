@@ -1,29 +1,29 @@
-#mother_section { /* contains form + products section */
+#container { /* contains form + products section */
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: flex-start;
 }
 #products_section { /* contain category name + products */
-    margin-left: 5px;
-    margin-top: 20px;
-    /*width: 930px;*/
+    margin-left: 30px;
+    margin-top: 30px;
 }
 #products {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     border-right: none;
+    margin-top: 30px;
 }
 #category_name {
     font-weight: bold;
     color: #1e2d7d;
     font-size: 2em;
-    margin-top: 5px;
-    margin-left: 15px;
+    margin-top: 10px;
+    margin-left: 100px;
 }
 .product {
-    width: 350px;
+    width: 380px;
     height: 590px;
     /*overflow: auto;*/
     border: 1px solid #e1e3e4;
@@ -65,30 +65,49 @@
     font-weight: bold;
     font-size: 1.4em;
 }
-.delete_product_button {
-    width: 150px;
-    margin: auto;
-}
-.delete_product_button a {
-    width: 150px;
-    text-align: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin-top: 10px;
-    background-color: #00badb;
-    border-radius: 3px;
-    color: white;
-    font-size: 1.2em;
-    font-weight: bold;
-    position: absolute;
-    top: 540px;
-}
-.delete_product_button a:hover {
-    background-color: #33c8e2;
-}
-#empty_category {
+#empty_category { /* message: "no product in this category" */
     position: absolute;
     left: 45%;
     font-size: 1.3em;
+    margin-top: 20px;
 }
+#search_message {
+    font-size: 1.3em;
+}
+#categories_and_brands {
+    font-size: 1.3em;
+}
+#selected_category, #selected_brand {
+    color: #1e2d7d;
+}
+#sort_by {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 200px;
+}
+#sort_by h1 {
+    font-weight: bold;
+    font-size: 1.6em;
+}
+#sort_by div {
+    margin-left: 30px;
+    font-size: 1.4em;
+}
+#mother_category, #brands h1 {
+    font-size: 1.1em;
+    margin-left: 5px;
+}
+#sub_categories, #brands ul {
+    position: relative;
+    left: -15px;
+    font-size: 0.95em;
+}
+#brands {
+    margin-top: 60px;
+}
+#categories_and_brands {
+    margin-top: 25px;
+}
+
 
