@@ -35,10 +35,10 @@ if (isset($_POST["submited"])) {
     if (cardValidation($_POST["cardNumber"], true)) {
         echo '<center>
             <h1>paiment bien validé !</h1>
-            <a class="btn btn-primary" href="http://localhost/githubcode/e-store/src/main/views/index.php">acceuil</a>
+            <a class="btn btn-primary" href="http://localhost/githubcode/e-store/src/views/index.php">acceuil</a>
         </center>';
     }else {
-        echo '<a href="http://localhost/githubcode/e-store/src/main/views/payment.php">
+        echo '<a href="http://localhost/githubcode/e-store/src/views/payment.php">
         <center>
             <h1>carte invalide ! tappez pour retourner!</h1>
         </center>
