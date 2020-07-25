@@ -1,1 +1,2 @@
 pour tester il faut exécutez store.sql et mysql_users.sql
+vous devez etre connecter pour que l'app paut acceder aux différents fichiers de BOOTSTRAP et jQuery 
