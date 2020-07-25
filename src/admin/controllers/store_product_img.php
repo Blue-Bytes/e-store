@@ -2,7 +2,7 @@
 include_once 'ProductImage.php';
 // $key format is: product_img'i' , where i is a number
 
-function store_product_img() {
+function store_product_img(Product $product) {
     $stored=true; // stored without errors or not
     global $errors;
     foreach( $_FILES as $key=>$img ) {
@@ -23,11 +23,11 @@ function store_product_img() {
         $storeimage='image';
         if( $extension=='jpg' ) $storeimage.='jpeg';
         else $storeimage.=$extension;
-        $path='../../product_img/'.$_POST['id'].get_img_index($key);
+        $path='../../product_img/'.$product->getId().get_img_index($key);
         $storeimage($new_img, $path.'.'.$extension);
         $storeimage($mini_img, $path.'_m.'.$extension);
         if( isset($front_img) ) {
-            $storeimage($front_img, '../../product_img/'.$_POST['id'].'.'.$extension);
+            $storeimage($front_img, '../../product_img/'.$product->getId().'.'.$extension);
         }
     }
     return $stored;
@@ -35,7 +35,6 @@ function store_product_img() {
 
 function upload_succed($img, $key, array &$errors=array()) {
     if( $img['error']!=0 ) {
-        //global $errors;
         switch( $img['error'] ) {
             case 1:
                 $errors[$key]="image too big (max: 2MB)";
@@ -60,7 +59,6 @@ function image($file, $key, array &$errors=array()) {
     $img_extensions=["jpg", "png"];
     $extension=pathinfo($file['name'])['extension'];
     if( !in_array($extension, $img_extensions) ) {
-        //global $errors;
         $errors[$key]="selected file not an image";
         return false;
     }

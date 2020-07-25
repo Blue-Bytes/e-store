@@ -14,7 +14,7 @@ class AddProductForm {
         echo '<form method="post" action="'.$this->action.'" id="'.$this->id.'" enctype="multipart/form-data">';
         $this->showFieldsZone($errors);
         echo '<div class="field">';
-            include '../../views/categories.php';
+            include 'categories.php';
         echo '</div>';
         $this->showImagesZone($errors);
         $this->showButtons();

@@ -15,15 +15,15 @@
     <title>Category</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="styles/header.css" />
-    <link rel="stylesheet" type="text/css" href="../../views/styles/menu.css" />
+    <link rel="stylesheet" type="text/css" href="styles/menu.css" />
     <link rel="stylesheet" type="text/css" href="styles/category.css" />
     <link rel="stylesheet" type="text/css" href="styles/add_product_form2.css" />
-    <script type="text/javascript" src="../../views/styles/menu.js"></script>
+    <script type="text/javascript" src="styles/menu.js"></script>
 </head>
 <body>
 <?php
     include 'header.php';
-    include '../../views/menu.php';
+    include 'menu.php';
 
     echo '<section id="mother_section">';
 

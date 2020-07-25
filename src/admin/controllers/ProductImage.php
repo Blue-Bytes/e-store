@@ -60,7 +60,7 @@ class ProductImage {
             if( !is_int($a) )   $a=floor($a)+1;
         }
         if( $this->height>$max_dim['height'] ) {
-            $b=$this->width/$max_dim['height'];
+            $b=$this->height/$max_dim['height'];
             if( !is_int($b) )   $b=floor($b)+1;
         }
         if( isset($a) ) {

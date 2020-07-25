@@ -13,7 +13,7 @@ class Product
     const EMPTY=3;
     const TOO_LONG=4;
     // the maximum length/value a field can accept
-    private static $max_length=['id'=>100, 'brand'=>30, 'price'=>99999.99, 'category'=>50];
+    private static $max_length=['id'=>150, 'brand'=>30, 'price'=>99999.99, 'category'=>50];
 
     // we assume that $data=[field=>value...]
     public function __construct(array $data, array &$errors=array()) {
@@ -82,6 +82,7 @@ class Product
             else
                 return $field." is too long(max length is ".self::$max_length[$field].")";
         }
-        else return "";
+        else if( $error_code==self::VALID ) return "";
+        else return "unknown error code";
     }
 }
