@@ -21,7 +21,6 @@
 <body>
     <?php
         include 'header.php';
-        include 'menu.php';
     ?>
     <section id="container">
         <section id="categories_and_brands">

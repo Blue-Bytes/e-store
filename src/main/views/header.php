@@ -89,9 +89,6 @@
             color: black;
         }
 
-        .shopping-basket {
-            display: none;
-        }
     </style>
     <script>
         $(function() {
@@ -113,26 +110,34 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navb">
-            <form action=""></form>
+            <form action="category.php" method="get">
             <div class="input-group container-sm">
                 <div class="input-group-prepend" id="dropdown">
                     <?php include("categories.php"); ?>
                 </div>
-                <input type="text" class="form-control input-group-prepend" placeholder="Chercher">
-                <button class="btn btn-outline-success" type="button" style="border-radius: 0%;">
+                <input type="text"  name="product_id" class="form-control input-group-prepend" placeholder="Chercher">
+                <button class="btn btn-outline-success" type="submit" style="border-radius: 0%;">
                     <i class='fas fa-search'></i>
                 </button>
             </div>
             </form>
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item" style="margin-top: 10px;">
-                    <a class="nav-link" href="login.php">Connecter</a>
+                    <?php
+                        if( isset($_SESSION['client']))
+                            echo '<a class="nav-link" href="../controllers/logout.php">Déconnexion</a>';
+                        else
+                            echo '<a class="nav-link" href="login.php">Déconnexion</a>';
+                    ?>
+                    <a class="nav-link" href="login.php">
+                        Connecter
+                    </a>
                 </li>
                 <li class="nav-item" style="margin-top: 10px;">
-                    <a class="nav-link" href="signup">S'inscrire</a>
+                    <a class="nav-link" href="sign_up.php">S'inscrire</a>
                 </li>
                 <li class="nav-item shopping-basket">
-                    <a class="nav-link" href="signup">
+                    <a class="nav-link" href="../controllers/cart.php">
                         <span id="num-product"></span>
                         <span><i class="fa fa-shopping-basket text-success"></i></span>
                     </a>

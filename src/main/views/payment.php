@@ -1,3 +1,9 @@
+<?php
+include_once '../models/Client.php';
+session_start();
+if( !isset($_SESSION['client']) )   exit();
+$client=$_SESSION['client'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,11 +31,13 @@
                                 <div id="credit-card" class="tab-pane fade show active pt-3">
                                     <form method="post" action="../controllers/paymentController.php">
                                     <div class="d-flex justify-content-center">
-                                        <h3 id="client" class="bg-primary" style="border-radius: 5px; padding: 5px;">moha ouhro</h3>
+                                        <h3 id="client" class="bg-primary" style="border-radius: 5px; padding: 5px;">
+                                            <?php echo $client->get_first_name().' '.$client->get_last_name(); ?>
+                                        </h3>
                                     </div>
                                     <div class="form-group"> <label for="address">
                                                 <h6>Adresse de livraison</h6>
-                                            </label> <input type="text" name="address" placeholder="Adresse de livraison" required class="form-control "> </div>
+                                            </label> <input type="text"  value="<?php echo $client->get_address();?>" name="address" placeholder="Adresse de livraison" required class="form-control "> </div>
                                         <div class="form-group"> <label for="username">
                                                 <h6>Propriétaire de la carte</h6>
                                             </label> <input type="text" name="username" placeholder="Nom du Propriétaire de la carte" required class="form-control "> </div>

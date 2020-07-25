@@ -38,6 +38,7 @@ echo '</section>';
 function display_product(Product $product)
 {
     echo '<div class="product">';
+    echo '<a href="product.php?product_id='.$product->getId().'">';
     echo '<figure>';
     $image_name = '../../product_img/' . $product->getId();
     if (file_exists($image_name . '.jpg'))
@@ -52,6 +53,7 @@ function display_product(Product $product)
     echo '<p class="id">' . $product->getId() . '</p>';
     echo '<p class="price">' . $product->getPrice() . ' DH</p>';
     echo '</div>';
+    echo '</a>';
     echo '</div>';
 }
 

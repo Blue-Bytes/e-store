@@ -9,15 +9,15 @@ class ProductManager
         $this->connection=$connection;
     }
 
-    public function search(String $category, String $id="%", String $brand="%", $sort_by) {
-        $req=$this->connection->prepare
-        ('SELECT * FROM article WHERE categorie=? AND id_article LIKE(?) AND marque LIKE(?) ORDER BY ?');
+    public function search(String $category, String $id="%", String $brand="%", String $sort_by='price') {
         if( $sort_by=='brand' )
             $req=$this->connection->prepare
-            ('SELECT * FROM article WHERE categorie=? AND id_article LIKE(?) AND marque LIKE(?) ORDER BY marque');
+            ('SELECT * FROM article WHERE categorie LIKE(?) AND id_article LIKE(?) 
+                        AND marque LIKE(?) ORDER BY marque');
         else
             $req=$this->connection->prepare
-            ('SELECT * FROM article WHERE categorie=? AND id_article LIKE(?) AND marque LIKE(?) ORDER BY prix_unitaire');
+            ('SELECT * FROM article WHERE categorie LIKE(?) AND id_article LIKE(?) 
+                        AND marque LIKE(?) ORDER BY prix_unitaire');
         $req->execute(array($category, $id, $brand));
         $products=[];
         while( $product=$req->fetch() ) {
@@ -27,6 +27,14 @@ class ProductManager
             $products[]=new Product($product);
         }
         return $products;
+    }
+
+    // check if a product exist
+    public function is_exist(String $product_id) {
+        $req=$this->connection->prepare('SELECT EXISTS(SELECT 1 FROM article WHERE id_article=?) AS exist');
+        $req->execute( array($product_id) );
+        $exist=($req->fetch())['exist'];
+        return $exist;
     }
 
     // get brands that exist in a category
