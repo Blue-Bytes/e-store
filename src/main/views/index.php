@@ -11,6 +11,10 @@
             .carousel-inner img {
                 height: 100%;
             }
+
+            #indics {
+                display: none;
+            }
         }
 
         .carousel-inner img {
@@ -26,7 +30,7 @@
         <div id="demo" class="carousel slide" data-ride="carousel">
 
             <!-- Indicators -->
-            <ul class="carousel-indicators">
+            <ul class="carousel-indicators" id="indics">
                 <li data-target="#demo" data-slide-to="0" class="active"></li>
                 <li data-target="#demo" data-slide-to="1"></li>
                 <li data-target="#demo" data-slide-to="2"></li>
