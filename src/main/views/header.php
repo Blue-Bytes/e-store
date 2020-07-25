@@ -81,8 +81,8 @@
         }
 
         #num-product {
-            margin-top: 5px;
-            margin-left: 1px;
+            /*margin-top: 5px;*/
+            margin-left: 7px;
             border-radius: 50%;
             background-color: orangered;
             padding: 3px;
@@ -127,18 +127,15 @@
                         if( isset($_SESSION['client']))
                             echo '<a class="nav-link" href="../controllers/logout.php">Déconnexion</a>';
                         else
-                            echo '<a class="nav-link" href="login.php">Déconnexion</a>';
+                            echo '<a class="nav-link" href="login.php">Connexion</a>';
                     ?>
-                    <a class="nav-link" href="login.php">
-                        Connecter
-                    </a>
                 </li>
                 <li class="nav-item" style="margin-top: 10px;">
                     <a class="nav-link" href="sign_up.php">S'inscrire</a>
                 </li>
                 <li class="nav-item shopping-basket">
                     <a class="nav-link" href="../controllers/cart.php">
-                        <span id="num-product"></span>
+                        <span id="num-product"></span><br>
                         <span><i class="fa fa-shopping-basket text-success"></i></span>
                     </a>
                 </li>
