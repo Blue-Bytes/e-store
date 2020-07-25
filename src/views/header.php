@@ -40,7 +40,7 @@
 
         .sidebar {
             position: fixed;
-            top: 60px;
+            top: 55px;
             left: -250px;
             width: 250px;
             height: 100%;
@@ -63,6 +63,12 @@
             top: 0;
             transform: rotate(-45deg);
         }
+        @media only screen and (max-width: 600px) {
+            #dropdown {
+                width: 100px;
+                margin-top: 5px;
+            }
+        }
     </style>
     <script>
         $(function() {
@@ -76,14 +82,14 @@
         <button class="sidebarBtn">
             <span></span>
         </button>
-        <a class="navbar-brand" href="index.php" id="logo">Logo</a>
+        <a class="navbar-brand" href="index.php" style="margin-left: 10px;">Logo</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navb">
             <form action=""></form>
-            <div class="input-group container-sm" style="margin: 0; padding:0;">
-                <div class="input-group-prepend" style="width:100px;">
+            <div class="input-group container-sm">
+                <div class="input-group-prepend" id="dropdown">
                     <?php include("categories.php"); ?>
                 </div>
                 <input type="text" class="form-control input-group-prepend" placeholder="Chercher">

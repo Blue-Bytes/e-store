@@ -8,10 +8,11 @@
 </head>
 <body>
     <?php include 'header.php'; ?>
-    <main class="container">
+    <main class="container" style="margin-bottom: 10px;">
+        <br>
         <center>
             <h1 class="bg-primary">
-                hhhhhhhhhhhhhhhhhhhhhhhhh
+                example
                 <?php
                 //name of the category that has been selected
                 ?>

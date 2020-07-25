@@ -30,5 +30,6 @@
         </div>
     </div>
     <?php include("footer.php"); ?>
+    <?php include("sidebar.php"); ?>
 </body>
 </html>

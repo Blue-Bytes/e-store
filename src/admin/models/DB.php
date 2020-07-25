@@ -8,7 +8,7 @@ class DB
     public static function connect($user, $password) {
         $db='mysql:host=localhost;dbname=store';
         try {
-            $connection=new PDO($db, $user, $password);
+            $connection = new PDO($db, $user, $password);
         }
         catch (PDOException $e) {
             echo $e->getMessage();

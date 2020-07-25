@@ -6,31 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php include "import_files.php"; ?>
     <title>Paiment</title>
-    <style>
-        body {
-            background: #f5f5f5
-        }
-
-        .rounded {
-            border-radius: 1rem
-        }
-
-        .nav-pills .nav-link {
-            color: #555
-        }
-
-        .nav-pills .nav-link.active {
-            color: white
-        }
-
-        input[type="radio"] {
-            margin-right: 5px
-        }
-
-        .bold {
-            font-weight: bold
-        }
-    </style>
 </head>
 
 <body>
@@ -53,7 +28,7 @@
                             <!-- Credit card form content -->
                             <div class="tab-content">
                                 <div id="credit-card" class="tab-pane fade show active pt-3">
-                                    <form role="form">
+                                    <form method="post" action="../controllers/paymentController.php">
                                         <div class="form-group"> <label for="username">
                                                 <h6>Propriétaire de la carte</h6>
                                             </label> <input type="text" name="username" placeholder="Nom du Propriétaire de la carte" required class="form-control "> </div>
@@ -78,8 +53,8 @@
                                                     </label> <input type="text" required class="form-control"> </div>
                                             </div>
                                         </div>
-                                        <div class="card-footer"> 
-                                            <button type="button" class="subscribe btn btn-primary btn-block shadow-sm"> Confirmer le Paiment </button>
+                                        <div class="card-footer">
+                                            <button type="submit" name="submited" class="subscribe btn btn-primary btn-block shadow-sm"> Confirmer le Paiment </button>
                                         </div>
                                     </form>
                                 </div>

@@ -16,7 +16,7 @@
             width: 100%;
         }
     </style>
-    <title>Document</title>
+    <title>Acceuil</title>
 </head>
 
 <body>
@@ -43,14 +43,6 @@
                     <img src="./images/proxy-immmage.jpg" alt="" height="300px">
                 </div>
             </div>
-
-            <!-- Left and right controls -->
-            <a class="carousel-control-prev" href="#demo" data-slide="prev">
-                <span class="carousel-control-prev-icon" style="background-color: black;"></span>
-            </a>
-            <a class="carousel-control-next" href="#demo" data-slide="next">
-                <span class="carousel-control-next-icon" style="background-color: black;"></span>
-            </a>
         </div>
         <br><br>
         <section class="container">
